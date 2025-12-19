@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini ATS + Reminder Kontrak</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="app">
+      <h1>Dashboard HR</h1>
+      <p>
+        Ringkasan data ATS & Kontrak (real-time) <br />
+        Created By Raychiko Syailendra Putra
+      </p>
+
+      <div class="dashboard">
+        <div class="card blue">
+          <h3>Total Kandidat</h3>
+          <span id="dTotal">0</span>
+        </div>
+        <div class="card gray">
+          <h3>Apply</h3>
+          <span id="dApply">0</span>
+        </div>
+        <div class="card yellow">
+          <h3>Interview</h3>
+          <span id="dInterview">0</span>
+        </div>
+        <div class="card green">
+          <h3>Lolos</h3>
+          <span id="dLolos">0</span>
+        </div>
+        <div class="card red">
+          <h3>Kontrak ≤30 Hari</h3>
+          <span id="dKontrak">0</span>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- MINI ATS -->
+      <h2>Mini ATS</h2>
+      <div class="form-grid">
+        <input id="cNama" placeholder="Nama Kandidat" />
+        <input id="cTelp" placeholder="No. Telepon" />
+        <input id="cPosisi" placeholder="Posisi" />
+        <input id="cPenempatan" placeholder="Penempatan" />
+        <select id="cStatus">
+          <option value="Apply">Apply</option>
+          <option value="Interview">Interview</option>
+          <option value="Lolos">Lolos</option>
+          <option value="Tidak">Tidak Lolos</option>
+        </select>
+      </div>
+
+      <div class="ats-bar">
+        <button onclick="addCandidate()">Tambah Kandidat</button>
+        <div class="ats-right">
+          <select id="filterStatus" onchange="applyFilter()">
+            <option value="">Semua Status</option>
+            <option value="Apply">Apply</option>
+            <option value="Interview">Interview</option>
+            <option value="Lolos">Lolos</option>
+            <option value="Tidak">Tidak Lolos</option>
+          </select>
+          <input
+            id="searchATS"
+            placeholder="🔍 Cari kandidat..."
+            oninput="applyFilter()"
+          />
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>No Telp</th>
+              <th>Posisi</th>
+              <th>Penempatan</th>
+              <th>Status</th>
+              <th>Last Update</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="candidateTable"></tbody>
+        </table>
+      </div>
+      <div class="pagination" id="atsPagination"></div>
+
+      <!-- REMINDER KONTRAK -->
+      <h2>Reminder Kontrak</h2>
+      <div class="form-grid">
+        <input id="kNama" placeholder="Nama Karyawan" />
+        <input id="kTelp" placeholder="No. Telepon" />
+        <input id="kPosisi" placeholder="Posisi" />
+        <input id="kPenempatan" placeholder="Penempatan" />
+        <input type="date" id="kEnd" />
+      </div>
+      <button onclick="addContract()">Tambah Kontrak</button>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>No Telp</th>
+              <th>Posisi</th>
+              <th>Penempatan</th>
+              <th>Habis</th>
+              <th>Status</th>
+              <th>Last Update</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="contractTable"></tbody>
+        </table>
+      </div>
+      <div class="pagination" id="contractPagination"></div>
+    </div>
+
+    <!-- MODAL EDIT KONTRAK -->
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <h3>Edit Tanggal Kontrak</h3>
+        <p id="editNama"></p>
+        <input type="date" id="editEnd" />
+        <div class="modal-actions">
+          <button class="btn-gray" onclick="closeModal()">Batal</button>
+          <button onclick="saveEditContract()">Simpan</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

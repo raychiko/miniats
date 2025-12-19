@@ -1,0 +1,189 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+  padding: 24px;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+h2 {
+  margin-top: 32px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+input,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+.ats-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+.ats-right {
+  display: flex;
+  gap: 8px;
+}
+.table-scroll {
+  max-height: 360px;
+  overflow-y: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+th {
+  background: #f3f4f6;
+  position: sticky;
+  top: 0;
+}
+.red {
+  background: linear-gradient(90deg, #fde2e2, #fff5f5);
+  border-left: 4px solid #dc2626;
+}
+.yellow {
+  background: #fffbeb;
+}
+.pagination {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pagination button {
+  background: #e5e7eb;
+  color: #111827;
+}
+.pagination button.active {
+  background: #2563eb;
+  color: #fff;
+}
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.card {
+  padding: 18px;
+  border-radius: 14px;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+}
+.card span {
+  font-size: 32px;
+  display: block;
+  margin-top: 6px;
+}
+.card.blue {
+  background: #dbeafe;
+}
+.card.gray {
+  background: #f3f4f6;
+}
+.card.yellow {
+  background: #fef3c7;
+}
+.card.green {
+  background: #dcfce7;
+}
+.card.red {
+  background: #fee2e2;
+}
+
+/* === existing styles tetap === */
+.action-btn {
+  display: flex;
+  gap: 10px;
+}
+.action-btn button {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* === EXISTING STYLE (TIDAK DIUBAH) === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.show {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-gray {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* RAPIN TOMBOL AKSI */
+.action-btn {
+  display: flex;
+  gap: 10px;
+}
